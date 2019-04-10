@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/railscasts.css">
+<title>Title of the document</title>
+</head>
+
+<body>
+    <pre>
+    <code  class="hljs sql">
+            CREATE TABLE "topic" (
+                "id" serial NOT NULL PRIMARY KEY,
+                "forum_id" integer NOT NULL,
+                "subject" varchar(255) NOT NULL
+            );
+            ALTER TABLE "topic"
+            ADD CONSTRAINT forum_id FOREIGN KEY ("forum_id")
+            REFERENCES "forum" ("id");
+            
+            -- Initials
+            insert into "topic" ("forum_id", "subject")
+            values (2, 'D''artagnian');
+    </code>
+    </pre>
+</body>
+<script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html> 
